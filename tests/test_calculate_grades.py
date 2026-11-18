@@ -27,3 +27,11 @@ def test_print_stat(capsys):
     assert '****** Grade Statistics ******' in out
     assert "The grades's mean is:" in out
     assert '****** END ******' in out
+
+def test_display_grade_stat(monkeypatch, capsys):
+    """End-to-end: mocked inputs flow through display_grade_stat."""
+    answers = iter(['1', '2', '3', '4', '5'])
+    monkeypatch.setattr('builtins.input', lambda _: next(answers))
+    display_grade_stat()
+    out = capsys.readouterr().out
+    assert "The grades's mean is: 3.0" in out
