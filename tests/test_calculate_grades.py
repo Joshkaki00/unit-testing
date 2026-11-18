@@ -13,3 +13,9 @@ def test_calculate_stat_empty_list():
     mean, sd = calculate_stat([])
     assert math.isnan(mean)
     assert math.isnan(sd)
+
+def test_read_input(monkeypatch):
+    """read_input collects five integers from input()."""
+    answers = iter(['90', '80', '70', '60', '50'])
+    monkeypatch.setattr('builtins.input', lambda _: next(answers))
+    assert read_input() == [90, 80, 70, 60, 50]
