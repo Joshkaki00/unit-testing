@@ -11,3 +11,6 @@ def test_extract_position_error_line():
     line = '|error| numerical calculations could not converge.'
     assert extract_position(line) is None
 
+def test_extract_position_debug_line():
+    """Debug lines should not yield a position."""
+    assert extract_position('|debug| something x:99') is None
