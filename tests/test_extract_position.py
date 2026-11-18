@@ -14,3 +14,8 @@ def test_extract_position_error_line():
 def test_extract_position_debug_line():
     """Debug lines should not yield a position."""
     assert extract_position('|debug| something x:99') is None
+
+def test_extract_position_empty_or_missing_x():
+    """Empty / no x: → None."""
+    assert extract_position('') is None
+    assert extract_position('|update| no position here') is None
