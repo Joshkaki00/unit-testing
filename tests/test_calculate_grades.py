@@ -19,3 +19,11 @@ def test_read_input(monkeypatch):
     answers = iter(['90', '80', '70', '60', '50'])
     monkeypatch.setattr('builtins.input', lambda _: next(answers))
     assert read_input() == [90, 80, 70, 60, 50]
+
+def test_print_stat(capsys):
+    """print_stat writes the expected summary lines."""
+    print_stat(3.0, math.sqrt(2.0))
+    out = capsys.readouterr().out
+    assert '****** Grade Statistics ******' in out
+    assert "The grades's mean is:" in out
+    assert '****** END ******' in out
