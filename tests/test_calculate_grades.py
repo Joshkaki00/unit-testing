@@ -1,5 +1,3 @@
-import unittest
 from unittest import mock
-import pytest
 import math
-from ..calculate_grades import *
+from calculate_grades import read_input, calculate_stat, print_stat, display_grade_stat
