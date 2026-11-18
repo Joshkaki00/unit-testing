@@ -1,5 +1,5 @@
 import math
-from ..carbon_dating import get_age_carbon_14_dating
+from carbon_dating import get_age_carbon_14_dating
 
 def test_get_age_carbon_14_dating_normal_case():
     """Age for ratio 0.35 should be about 8680.34 years."""
