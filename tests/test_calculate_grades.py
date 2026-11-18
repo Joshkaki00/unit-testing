@@ -7,3 +7,9 @@ def test_calculate_stat_normal_case():
     mean, sd = calculate_stat([1, 2, 3, 4, 5])
     assert math.isclose(mean, 3.0)
     assert math.isclose(sd, math.sqrt(2.0))
+
+def test_calculate_stat_empty_list():
+    """Empty grade list should return NaN for mean and SD."""
+    mean, sd = calculate_stat([])
+    assert math.isnan(mean)
+    assert math.isnan(sd)
