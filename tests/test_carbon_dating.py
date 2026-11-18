@@ -1,5 +1,3 @@
-import unittest
-import pytest
 import math
 from ..carbon_dating import get_age_carbon_14_dating
 
