@@ -21,6 +21,8 @@ def read_input():
 
 def calculate_stat(grade_list):
     """Calculate the mean and standard deviation of the grades."""
+    if not grade_list:
+        return float('NaN'), float('NaN')
     total = 0
     for grade in grade_list:
         total = total + grade
